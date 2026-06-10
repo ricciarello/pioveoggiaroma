@@ -231,13 +231,12 @@ footer {
 }
  
 #tomorrow-answer {
-    font-size: clamp(3rem, 18vw, 10rem);
+    font-size: clamp(2rem, 11vw, 10rem);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -4px;
     text-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    word-break: break-word;
-    white-space: normal;
+    white-space: nowrap;
 }
  
 #tomorrow-comment {
@@ -315,12 +314,8 @@ footer {
         width: 90vw;
     }
  
-    #tomorrow-answer {
-        font-size: clamp(2.5rem, 22vw, 6rem);
-        letter-spacing: -2px;
-    }
- 
     #tomorrow-comment {
         font-size: 0.95rem;
     }
+}
 }
