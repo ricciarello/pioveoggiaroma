@@ -239,6 +239,13 @@ footer {
     white-space: nowrap;
 }
  
+@media (max-width: 600px) {
+    #tomorrow-answer {
+        font-size: 2.8rem;
+        letter-spacing: -2px;
+    }
+}
+ 
 #tomorrow-comment {
     font-size: 1.1rem;
     font-weight: 600;
@@ -317,5 +324,4 @@ footer {
     #tomorrow-comment {
         font-size: 0.95rem;
     }
-}
 }
