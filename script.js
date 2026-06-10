@@ -1,6 +1,6 @@
 // ☔ 31 frasi per la PIOGGIA
 const FRASI_PIOVE = [
-    "Ahò, butta male, piove a secchi! ☔",
+    "Ao, butta male, piove a secchi! ☔",
     "Sta a piovve a catinelle! Te conviene stà a casa a fà i rigatoni. 🍝",
     "Esci solo se c'hai er gommone o se sai nuotà bene! 🏊",
     "Prendi l'ombrello o te ritrovi fradicio come 'n pulcino! 🐥",
@@ -15,7 +15,7 @@ const FRASI_PIOVE = [
     "Se esci senza ombrello fai prima a farti 'na doccia cor bagnoschiuma. 🧼",
     "Oggi pioggia 'ncoppata. Te conviene stappà 'na bottiglia de rosso. 🍷",
     "Le pozzanghere so' talmente grandi che c'hanno er codice postale loro. ✉️",
-    "Ahò, pure i piccioni oggi c'hanno l'impermeabile! 🐦",
+    "Ao, pure i piccioni oggi c'hanno l'impermeabile! 🐦",
     "Nuvole nere che sembrano er carbone della Befana. Sta a piovve! ☁️",
     "Prendi lo scafandro prima de mette piede fori da casa! 👨‍🚀",
     "A Roma co' du' gocce d'acqua se crea er panico peggio de un'invasione aliena. 👽",
@@ -68,23 +68,6 @@ const FRASI_SOLE = [
     "Sole così bello che manco er traffico sul Raccordo riesce a rovinà la giornata. 🚗"
 ];
 
-// 🚦 Frasi traffico
-const TRAFFICO_PIOVE = [
-    "Raccordo bloccato da qui ar Giubileo. C'è gente che c'ha preso la residenza in terza corsia. 🚗💥",
-    "Completamente paralizzato. Sulla Tangenziale Est se viaggia a colpi de remo. 🛶",
-    "Panico totale. Roma s'è allagata e la gente guida cor gommone. 🌊",
-    "Du' gocce d'acqua e i semafori diventano addobbi natalizi. Nessuno capisce più gnente. 🚦",
-    "Er bus 60 non passa manco se preghi in aramaico. Te conviene camminà! 🚶"
-];
-
-const TRAFFICO_SOLE = [
-    "Scorrevole (pe' modo de dì). Er Raccordo non è ancora un parcheggio a cielo aperto. 🏎️",
-    "Traffico regolare, a parte er solito tassista che te taglia la strada a Piazza Venezia. 🚕",
-    "Tutto ok, vai tranquillo! Esci in vespa che è una meraviglia. 🛵",
-    "Se viaggia bene! C'è solo la coda de turisti ar Colosseo, ma quella c'è pure a Capodanno. 🏛️",
-    "Situazione tranquilla, puoi andà a farti 'na passeggiata senza rimanè imbottigliato. 😌"
-];
-
 // Frasi domani
 const FRASI_DOMANI_SI = [
     "Domani pure... tieniti er gommone a portata de mano! 🚢",
@@ -117,7 +100,6 @@ let fraseSelezionata = "";
 async function checkMeteoRoma() {
     const answerEl = document.getElementById('answer');
     const commentEl = document.getElementById('comment');
-    const trafficEl = document.getElementById('traffic-text');
     const bgContainer = document.getElementById('weather-background');
 
     try {
@@ -141,22 +123,19 @@ async function checkMeteoRoma() {
             answerEl.innerText = "SÌ";
             fraseSelezionata = getRandomElement(FRASI_PIOVE);
             commentEl.innerText = fraseSelezionata;
-            trafficEl.innerText = getRandomElement(TRAFFICO_PIOVE);
             attivaEffettoPioggia(bgContainer);
         } else {
             document.body.classList.add('theme-dry');
             answerEl.innerText = "NO";
             fraseSelezionata = getRandomElement(FRASI_SOLE);
             commentEl.innerText = fraseSelezionata;
-            trafficEl.innerText = getRandomElement(TRAFFICO_SOLE);
             attivaEffettoSole(bgContainer);
         }
 
     } catch (err) {
         document.body.classList.remove('loading');
         answerEl.innerText = "BOH";
-        commentEl.innerText = "Ahò, er satellite s'è impallato, affacciati alla finestra! 🪟";
-        trafficEl.innerText = "Non lo so, ma sul Raccordo c'è coda. C'è sempre. 🚗";
+        commentEl.innerText = "Ao, er satellite s'è impallato, affacciati alla finestra! 🪟";
     }
 }
 
@@ -194,7 +173,7 @@ document.getElementById('btn-romano').addEventListener('click', () => {
 // Condividi su WhatsApp
 document.getElementById('btn-share').addEventListener('click', () => {
     const rispostaText = pioveOggi ? "SÌ, sta a piovve!" : "NO, c'è er sole!";
-    const testo = `Ahò! Ma piove oggi a Roma? ☔\nLa risposta è: ${rispostaText}\n\n"${fraseSelezionata}"\n\nControlla pure tu: ${window.location.href}`;
+    const testo = `Ao! Ma piove oggi a Roma? ☔\nLa risposta è: ${rispostaText}\n\n"${fraseSelezionata}"\n\nControlla pure tu: ${window.location.href}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(testo)}`, '_blank');
 });
 
