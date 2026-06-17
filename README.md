@@ -2,11 +2,11 @@
 
 > La risposta definitiva alla domanda esistenziale che ogni romano si pone prima di uscire di casa.
 
-Puoi visitarlo qui 👉🏻 [Piove Oggi a Roma🌧️](https://ricciarello.github.io/pioveoggiaroma/)
-
 Hai in programma un weekend fuori? Una passeggiata al centro? O semplicemente devi prendere la moto e vuoi evitare di trasformarti in un sub? 🏍️
 
 **Piove Oggi a Roma** azzera il rumore di fondo dei classici siti meteo (pieni di grafici complessi, percentuali inutili e pubblicità) e ti sputa in faccia un'unica, brutale verità in tempo reale: **Piove o non piove?**
+
+Puoi visitarlo qui 👉🏻 [Piove Oggi a Roma🌧️](https://ricciarello.github.io/pioveoggiaroma/)
 
 ---
 
