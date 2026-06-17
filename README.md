@@ -1,6 +1,6 @@
 # 🌧️ Piove Oggi a Roma?
 
-> La risposta definitiva, minimale e un po' cyberpunk alla domanda esistenziale che ogni romano si pone prima di uscire di casa.
+> La risposta definitiva alla domanda esistenziale che ogni romano si pone prima di uscire di casa.
 
 Puoi visitarlo qui 👉🏻 [Piove Oggi a Roma🌧️](https://ricciarello.github.io/pioveoggiaroma/)
 
