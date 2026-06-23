@@ -104,17 +104,25 @@ async function checkMeteoRoma() {
 
     try {
         const res = await fetch(
-            'https://api.open-meteo.com/v1/forecast?latitude=41.8919&longitude=12.5113&current=weather_code&daily=weather_code&forecast_days=2&timezone=Europe%2FRome'
+            'https://api.open-meteo.com/v1/forecast?latitude=41.8919&longitude=12.5113&current=weather_code&hourly=weather_code&daily=weather_code&forecast_days=2&timezone=Europe%2FRome'
         );
         if (!res.ok) throw new Error('API Error');
 
         const data = await res.json();
-        const codeOggi = data.current.weather_code;
-        const codeDomani = data.daily.weather_code[1]; // indice 1 = domani
+        // const codeOggi = data.current.weather_code;
+        // const codeDomani = data.daily.weather_code[1]; // indice 1 = domani
+
+        // const codiciPioggia = [51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99];
+        // pioveOggi = codiciPioggia.includes(codeOggi);
+        // pioveDomani = codiciPioggia.includes(codeDomani);
 
         const codiciPioggia = [51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99];
-        pioveOggi = codiciPioggia.includes(codeOggi);
-        pioveDomani = codiciPioggia.includes(codeDomani);
+        
+        const oggiHours = data.hourly.weather_code.slice(6, 24);
+        pioveOggi = oggiHours.some(code => codiciPioggia.includes(code));
+        
+        const domaniHours = data.hourly.weather_code.slice(30, 48);
+        pioveDomani = domaniHours.some(code => codiciPioggia.includes(code));
 
         document.body.classList.remove('loading');
 
